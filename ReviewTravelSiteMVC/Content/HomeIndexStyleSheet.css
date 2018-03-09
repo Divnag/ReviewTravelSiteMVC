@@ -1,0 +1,41 @@
+﻿.col-md-12.firstimg {
+    background: url('Images/Asia-Travel-Groupresize.jpg')no-repeat center center;
+    background-size: cover;
+   border-left:unset!important;
+    position: relative;
+    object-fit: contain;
+    width: 90vw;
+    height: 60vh;
+}
+
+.navbar.navbar-inverse {
+    background-color: white !important;
+}
+
+.navbar-header a.navbar-brand {
+    color: black !important;
+}
+ul.nav.navbar-nav {
+    float: right !important;
+}
+ul.nav.navbar-nav li a:hover {
+    color: black;
+    background-color:none;
+    
+}
+
+
+.jumbotron{
+    padding-top:10%;
+    background:none;
+    text-align:center;
+    color:blue;
+    font-weight:800;
+   
+}
+
+.col-md-3 {
+    background: url('Images/picnic-with-the-pops.jpg') no-repeat center center;
+    background-size:cover;
+    height:50vh;
+}
