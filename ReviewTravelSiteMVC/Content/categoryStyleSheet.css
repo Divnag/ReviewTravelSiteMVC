@@ -1,0 +1,41 @@
+﻿body{
+    background-color:aliceblue;
+}
+.jumbotron {
+    background: none;
+    text-align: center;
+    color:darkred;
+}
+.btn-default{
+    background-color:aliceblue;
+}
+
+.navbar-inverse {
+    border-color: transparent !important;
+}
+
+.navbar.navbar-inverse {
+    background-color: transparent !important;
+}
+
+.navbar-header a.navbar-brand {
+    color: #f44141 !important;
+}
+
+ul.nav.navbar-nav {
+    float: right !important;
+}
+
+    ul.nav.navbar-nav li a:hover {
+        color: black;
+        background-color: none;
+    }
+
+    ul.nav.navbar-nav li a {
+        color: #f44141;
+    }
+
+
+.thumbnail{
+    background-color:lightgrey;
+}

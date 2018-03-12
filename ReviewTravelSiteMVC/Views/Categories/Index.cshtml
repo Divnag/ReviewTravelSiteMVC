@@ -1,39 +1,53 @@
-﻿@model IEnumerable<ReviewTravelSiteMVC.Models.Category>
+﻿<link href="~/Content/categoryStyleSheet.css" rel="stylesheet" />
+
+@model IEnumerable<ReviewTravelSiteMVC.Models.Category>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="jumbotron">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.About)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+       <a class="btn btn-default"href=" @Url.Action("Create", "Categories")">Create New</a>
+    </p>
+</div>
+<div class="row">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.About)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoryID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryID })
-        </td>
-    </tr>
-}
 
-</table>
+    @foreach (var item in Model)
+
+    {
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <p><strong>@Html.DisplayNameFor(model => model.Location)</strong></p>
+
+            <p>
+                @Html.DisplayFor(modelItem => item.Location)
+            </p>
+            <p>
+                <strong>  @Html.DisplayNameFor(model => model.About)</strong>
+            </p>
+            <p>
+               @Html.DisplayFor(modelItem => item.About)
+            </p>
+            <p>
+                <a class="btn btn-default" href=" @Url.Action("Edit", "Categories", new { id = item.CategoryID })">
+                    <img src="~/Content/Images/icons8-edit-file-20.png" />
+                </a>
+                @*<a class="btn btn-default" href=" @Url.Action("Details", "Categories", new { id = item.CategoryID })">
+
+                    <img src="~/Content/Images/icons8-search-20.png" />
+                </a>*@
+                @*<a class="btn btn-default" href=" @Url.Action("Delete", "Categories", new { id = item.CategoryID })">
+
+                    <img src="~/Content/Images/icons8-cancel-20.png" />
+                </a>*@
+                 </p>
+        </div>
+    </div>
+            }
+
+        </div>
+
+   

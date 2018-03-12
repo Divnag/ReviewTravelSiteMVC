@@ -1,19 +1,19 @@
-﻿@model ReviewTravelSiteMVC.Models.Category
+﻿<link href="~/Content/editStyleSheet1.css" rel="stylesheet" />
+
+@model ReviewTravelSiteMVC.Models.Category
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Category</h4>
-        <hr />
+        
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })

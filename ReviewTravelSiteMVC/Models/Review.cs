@@ -11,17 +11,20 @@ namespace ReviewTravelSiteMVC.Models
     {
 
             [Key]
-            public int ReviewID { get; set; }
-            public string ReviewerName { get; set; }
-             [Display (Name="Title Of Your Review")]
-            public string ReviewTitle { get; set; }
-            [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
+             public int ReviewID { get; set; }
+             [Display(Name ="Name Of the Reviewer")]
+             public string ReviewerName { get; set; }
+             [Display (Name="Location")]
+             public string ReviewTitle { get; set; }
+              [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
              public DateTime ReviewDate { get; set; }
+             [Display(Name ="Review")]
             public string ReviewContent { get; set; }
             [Display (Name ="Recommended")]
             public bool IsRecommended { get; set; }
 
             [ForeignKey("Category")]
+            [Display(Name ="Category")]
             public int CategoryID { get; set; }
 
             //Navigation Properties

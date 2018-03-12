@@ -1,20 +1,19 @@
-﻿@model ReviewTravelSiteMVC.Models.Review
+﻿<link href="~/Content/editStyleSheet1.css" rel="stylesheet" />
+@model ReviewTravelSiteMVC.Models.Review
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Review</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-horizontal ">
+       
+           @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ReviewID)
 
         <div class="form-group">

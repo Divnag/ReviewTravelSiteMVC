@@ -1,63 +1,75 @@
-﻿@model IEnumerable<ReviewTravelSiteMVC.Models.Review>
+﻿
+<link href="~/Content/ReviewIndexSS.css" rel="stylesheet" />
+
+
+@model IEnumerable<ReviewTravelSiteMVC.Models.Review>
 
 @{
     ViewBag.Title = "Index";
 }
 
 
+<div class="jumbotron">
+    <div class="col-md-12">
+        <a class="btn btn-default" href=" @Url.Action("Create","Reviews")">Write Review </a>
+    </div>
+</div>
 
-<p>
-   <a class="btn btn-default" href=" @Url.Action("Add Category", "Create")">Add Category</a>"
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviewerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviewTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviewDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReviewContent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsRecommended)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-sm-6 col-md-12">
+            <div class="animated flipInX">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReviewerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReviewTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReviewDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReviewContent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsRecommended)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReviewID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReviewID })
-        </td>
-    </tr>
-}
+                <div class="thumbnail">
 
-</table>
+                    <div class="caption">
+                        @*<p>
+            <strong> @Html.DisplayNameFor(model => model.Category.Location)</strong>: @Html.DisplayFor(modelItem => item.Category.Location)
+        </p>*@
+                        <p>
+                            @*@Html.DisplayNameFor(model => model.ReviewerName):*@ <strong>@Html.DisplayFor(modelItem => item.ReviewerName)</strong>
+                        </p>
+                        <p>
+                            <strong> Wrote Review on</strong>:<a href="@Url.Action("Details","Reviews", new { id = item.ReviewID })"> @Html.DisplayFor(modelItem => item.ReviewTitle)</a>
+                        </p>
+                        <p>
+                            <strong>Category</strong>:@Html.DisplayFor(modelItem => item.Category.Location)
+                        </p>
+
+                        <p>
+                             @Html.DisplayFor(modelItem => item.ReviewContent)
+                        </p>
+                        <p>
+                            <strong> @Html.DisplayNameFor(model => model.IsRecommended)</strong>: @Html.DisplayFor(modelItem => item.IsRecommended)
+                        </p>
+                        <p>
+                            <strong> @Html.DisplayNameFor(model => model.ReviewDate)</strong>: @Html.DisplayFor(modelItem => item.ReviewDate)
+                        </p>
+                        <p>
+                            <a class="btn btn-default" href=" @Url.Action("Edit", "Reviews", new { id = item.ReviewID })">
+                                <img src="~/Content/Images/icons8-edit-file-20.png" />
+                            </a>
+                            <a class="btn btn-default" href=" @Url.Action("Details", "Reviews", new { id = item.ReviewID })">
+
+                                <img src="~/Content/Images/icons8-search-20.png" />
+                            </a>
+                            <a class="btn btn-default" href=" @Url.Action("Delete", "Reviews", new { id = item.ReviewID })">
+
+                                <img src="~/Content/Images/icons8-cancel-20.png" />
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       
+
+        }
+
+    </div>
+
+
+
+

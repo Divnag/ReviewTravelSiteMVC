@@ -1,0 +1,48 @@
+﻿.createimg {
+    float: right;
+}
+body{
+    background-color:aliceblue;
+}
+
+.navbar.navbar-inverse {
+    background-color: transparent !important;
+}
+
+.navbar-header a.navbar-brand {
+    color: #f44141 !important;
+}
+
+ul.nav.navbar-nav {
+    float: right !important;
+}
+
+    ul.nav.navbar-nav li a:hover {
+        color: black;
+        background-color: none;
+    }
+
+.navbar-inverse {
+    border-color: transparent !important;
+}
+
+ul.nav.navbar-nav li a:hover {
+    color: black;
+    background-color: none;
+}
+
+ul.nav.navbar-nav li a {
+    color: #f44141;
+}
+
+.jumbotron{
+    background:none;
+    height:10px;
+}
+.form-horizontal{
+    margin-top:5%;
+}
+
+.delete {
+    margin-top: 5%;
+}

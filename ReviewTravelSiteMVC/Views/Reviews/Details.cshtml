@@ -1,66 +1,40 @@
-﻿@model ReviewTravelSiteMVC.Models.Review
+﻿<link href="~/Content/DetailsReview.css" rel="stylesheet" />
+
+
+@model ReviewTravelSiteMVC.Models.Review
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="jumbotron"></div>
 
-<div>
-    <h4>Review</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.Location)
-        </dt>
+    
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="animated flipInX">
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.Location)
-        </dd>
+            <div class="thumbnail">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReviewerName)
-        </dt>
+                <div class="caption">
+                    <p>
+                        <strong> @Html.DisplayNameFor(model => model.Category.Location)</strong>:@Html.DisplayFor(model => model.Category.Location)
+                    </p>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReviewerName)
-        </dd>
+                    <p>
+                       <strong>About the Location</strong> : @Html.DisplayFor(model => model.Category.About)
+                    </p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReviewTitle)
-        </dt>
+                    <p>
+                        @Html.DisplayNameFor(model => model.IsRecommended): @Html.DisplayFor(model => model.IsRecommended)
+                    </p>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReviewTitle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ReviewDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ReviewDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ReviewContent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ReviewContent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsRecommended)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsRecommended)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    <p>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }) |*@
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>  
+        </div>
